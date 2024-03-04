@@ -8,11 +8,6 @@ You can trigger a DAG and pass data as runtime configuration using the --conf fl
 
 This command triggers the my-dag in the my-environment located in the us-central1 region. The -c flag with JSON data defines the configuration key-value pairs accessible within the DAG using {{ dag_run.conf['key'] }} syntax.
 
-2. Cloud Storage and environment variables:
-
-Store your data in a JSON file within Cloud Storage. During DAG execution, access the file using a task (e.g., GCPTransferOperator) and parse the data. Extract relevant values and set them as environment variables within the task using Python libraries like os. These environment variables can then be accessed by subsequent tasks within the DAG.
-
-
 Python Code for POC
 
 
@@ -35,3 +30,10 @@ Python Code for POC
             "MY_VAR2": my_var2,
         },
     )
+
+2. Cloud Storage and environment variables:
+
+Store your data in a JSON file within Cloud Storage. During DAG execution, access the file using a task (e.g., GCPTransferOperator) and parse the data. Extract relevant values and set them as environment variables within the task using Python libraries like os. These environment variables can then be accessed by subsequent tasks within the DAG.
+
+
+
